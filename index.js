@@ -9,9 +9,13 @@ app.use(bodyParser.json());
 
 app.post("/api/send-verification-email", sendVerificationEmail);
 
-// ✅ Add this ping route for uptime monitoring
+// ✅ Add ping support for GET and HEAD (UptimeRobot free plan)
 app.get("/ping", (req, res) => {
   res.send("🟢 Server is up and running!");
+});
+
+app.head("/ping", (req, res) => {
+  res.status(200).end();
 });
 
 const port = process.env.PORT || 3000;
