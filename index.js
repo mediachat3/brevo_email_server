@@ -1,7 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
-import { sendVerificationEmail } from "./api/send-verification-email.js";
+import sendVerificationEmail from "./api/send-verification-email.js";
+
 
 const app = express();
 app.use(cors());
